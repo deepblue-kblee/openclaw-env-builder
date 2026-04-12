@@ -1,0 +1,64 @@
+name: jarvis-box
+version: "1.0.0"
+description: "Declarative OpenClaw Sandbox for Jarvis Agent"
+
+runtime:
+  engine: openshell
+  image: nvidia/nemoclaw-base:latest
+  options:
+    memory: 8GB
+    cpus: 4
+
+env:
+  OPENCLAW_PROFILE: jarvis
+  LOG_LEVEL: info
+
+skills:
+  sources:
+    - name: openclaw-bundled
+      type: builtin
+    - name: clawhub
+      type: registry
+      url: https://clawhub.com
+
+  # Essential Skills to be pre-installed/verified
+  required:
+    # Meta & System
+    - healthcheck
+    - skill-creator
+    - session-logs
+    - mcporter
+    
+    # Productivity
+    - apple-notes
+    - apple-reminders
+    - notion
+    - obsidian
+    
+    # Communication
+    - slack
+    - wacli
+    
+    # Tools
+    - summarize
+    - weather
+
+policies:
+  network:
+    egress:
+      - host: "*.openclaw.ai"
+        port: 443
+      - host: "clawhub.com"
+        port: 443
+      - host: "api.openai.com"
+        port: 443
+      - host: "api.anthropic.com"
+        port: 443
+      - host: "*.google.com"
+        port: 443
+  filesystem:
+    read_only:
+      - /sandbox
+    writable:
+      - /sandbox/.openclaw-data
+      - /tmp
