@@ -5,9 +5,12 @@
 ---
 
 ### 🕒 마지막 업데이트: 2026-04-13
-- **현재 진행 단계**: Phase 3. 업무 층 (Gemini CLI) 통합 - 샌드박스 네트워크 해결 중
-- **현재 집중 작업 (Current Task)**: 샌드박스(`jarvis-box`) 내부 스킬 설치를 위한 네트워크 권한 확보
-- **마지막 성공 액션 (Last Action)**: 선언적 하네스 파일(`openclaw-sandbox.yaml`, `openshell-policy.yaml`) 생성 및 `GEMINI.md` 가이드 최신화
+- **현재 진행 단계**: Phase 3. 업무 층 (Gemini CLI) 통합 - 샌드박스 설정 최적화
+- **현재 집중 작업 (Current Task)**: 로컬 Ollama 환경에 맞춘 `openclaw-sandbox.yaml` 및 `openshell-policy.yaml` 정밀 튜닝
+- **전략적 결정**: 
+  - **초기 통합(Method A)**: 현재 빌더 공간에서 모든 설정을 완성.
+  - **추후 분리(Method B)**: 설정이 안정화되면 `~/jarvis-home` 등으로 배포하는 구조로 전환.
+- **마지막 성공 액션 (Last Action)**: 로컬 Git 저장소 초기화 및 첫 커밋 완료
 - **주요 장애물 (Blockers)**: 
   1. `nemoclaw onboard` 실행 시 `NVIDIA_API_KEY` 필수 요구 (클라우드 NIM 설정 단계).
   2. `openshell` 기본 정책이 외부 통신(npm/clawhub)을 차단하여 스킬 설치 실패 (403 Forbidden).
