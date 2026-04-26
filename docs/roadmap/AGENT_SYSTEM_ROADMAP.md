@@ -19,17 +19,15 @@
 - [x] 샌드박스 실행 정책 수립 (`docs/policy/SANDBOX_POLICY.md`)
 - [x] 하네스 엔지니어링 방법론 요약본 저장 (`docs/methodology/HarnessEngineering.md`)
 
-### Phase 2: 샌드박스 및 실행 층 구축 (Done)
+### Phase 2: 샌드박스 및 실행 층 구축 (In-Progress)
 - [x] Docker Desktop 4.40+ 및 Node.js v22+, Python 점검 완료
-- [x] NVIDIA NemoClaw 인스톨러 실행 및 가동
-- [x] OpenClaw 샌드박스 컨테이너 구성 및 네트워크 프록시 설정
-- [x] 샌드박스용 Credential Injection (API Key 관리) 설정
-- [x] 샌드박스 환경 내 테스트 명령 실행 및 로그 검증
+- [ ] OpenClaw Native Docker Sandbox 활성화 (`openclaw.json`)
+- [ ] 샌드박스용 전용 이미지 빌드 및 최적화
+- [ ] 샌드박스 내 환경 테스트 명령 실행 및 로그 검증
 
-### Phase 3: 업무 층 (Gemini CLI) 통합 (In-Progress)
+### Phase 3: 업무 층 (Gemini CLI) 통합
 - [x] Gemini CLI 활용 샌드박스 격리 지침(`GEMINI.md`) 수립
-- [x] Jarvis 라우팅 가이드 명시 (`openshell sandbox exec`)
-- [ ] **[Next]** 샌드박스 내부 OpenClaw CLI 검증 및 기본 스킬 패키지 설치
+- [ ] OpenClaw 샌드박스 자동 라우팅 검증
 - [ ] 샌드박스 내 로컬 에이전트(Jarvis) 테스트 시나리오 실행
 
 ### Phase 4: 일상/실행 층 (OpenClaw) 확장
@@ -45,6 +43,7 @@
 ---
 
 ## 📝 변경 이력 (Change Log)
+- **2026-04-26**: [전략 변경] NemoClaw/OpenShell 사용 중단 결정. OpenClaw Native Docker Sandbox 기반으로 아키텍처 단순화. NemoClaw 관련 파일 및 도구 삭제 완료.
 - **2026-04-13**: [전략 결정] 초기 구축은 통합형(Method A)으로 진행하되, 설정 완성 후 빌더-배포형(Method B)으로 분리하기로 결정. Phase 2.5 로드맵 추가.
 - **2026-04-13**: [Git] 로컬 Git 저장소 초기화 (`openclaw-env-builder`).
 - **2026-04-13**: Claude Code 대신 Gemini CLI를 주 업무 층으로 선택. 샌드박스 내부 OpenClaw 초기화 단계 추가. 자율 주행 프로토콜 도입.

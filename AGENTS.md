@@ -7,6 +7,7 @@
 ### 1. 핵심 철학 (Core Philosophy)
 - 우리는 **'하네스 엔지니어링(Harness Engineering)'**을 준수한다.
 - 실수가 발생하면 프롬프트가 아닌 **구조적 시스템(Harness)**을 고친다.
+- 모든 위험 작업은 OpenClaw 자체 **Docker Sandbox** 내에서 수행한다.
 - 상세 원칙: `docs/methodology/HarnessEngineering.md`
 
 ### 2. 세션 연속성 및 부팅 시퀀스 (Boot Sequence)
@@ -23,6 +24,7 @@
 - **로드맵**: `docs/roadmap/AGENT_SYSTEM_ROADMAP.md`
 - **보안 정책**: `docs/policy/SANDBOX_POLICY.md`
 - **방법론**: `docs/methodology/HarnessEngineering.md`
+- **빠른 참조 (FAQ)**: `docs/user-help/QUICK_REF.md`
 
 ---
 *주의: 모든 실행은 `docs/policy/SANDBOX_POLICY.md`의 보안 구역(Zone) 규칙을 따른다.*
