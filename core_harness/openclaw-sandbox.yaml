@@ -14,7 +14,7 @@ env:
   LOG_LEVEL: info
   OPENCLAW_LLM_PROVIDER: ollama
   OPENCLAW_LLM_MODEL: qwen2.5:7b
-  OPENCLAW_LLM_BASE_URL: http://host.docker.internal:11434/v1
+  OPENCLAW_LLM_BASE_URL: http://192.168.219.192:11434/v1
 
 skills:
   sources:
@@ -58,6 +58,8 @@ policies:
       - host: "registry.yarnpkg.com"
         port: 443
       - host: "host.docker.internal"
+        port: 11434
+      - host: "192.168.219.192"
         port: 11434
       - host: "api.openai.com"
         port: 443
