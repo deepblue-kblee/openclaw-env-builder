@@ -10,7 +10,8 @@
 - **전략적 결정**: 
   - **초기 통합(Method A)**: 현재 빌더 공간에서 모든 설정을 완성.
   - **추후 분리(Method B)**: 설정이 안정화되면 `~/jarvis-home` 등으로 배포하는 구조로 전환.
-- **마지막 성공 액션 (Last Action)**: 로컬 Git 저장소 초기화 및 첫 커밋 완료
+  - **유지보수 자동화**: 변동성이 높은 설정(IP, 모델, 스킬) 관리를 위한 별도 계획 수립 (`docs/state/ENVIRONMENT_AUTOMATION_TODO.md` 참조).
+- **마지막 성공 액션 (Last Action)**: 로컬 Ollama LAN IP 연결 성공 및 정책 v6 적용
 - **주요 장애물 (Blockers)**: 
   1. `nemoclaw onboard` 실행 시 `NVIDIA_API_KEY` 필수 요구 (클라우드 NIM 설정 단계).
   2. `openshell` 기본 정책이 외부 통신(npm/clawhub)을 차단하여 스킬 설치 실패 (403 Forbidden).
