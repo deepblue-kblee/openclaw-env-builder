@@ -13,8 +13,7 @@
   - **유지보수 자동화**: 변동성이 높은 설정(IP, 모델, 스킬) 관리를 위한 별도 계획 수립 (`docs/state/ENVIRONMENT_AUTOMATION_TODO.md` 참조).
 - **마지막 성공 액션 (Last Action)**: 로컬 Ollama LAN IP 연결 성공 및 정책 v6 적용
 - **주요 장애물 (Blockers)**: 
-  1. `nemoclaw onboard` 실행 시 `NVIDIA_API_KEY` 필수 요구 (클라우드 NIM 설정 단계).
-  2. `openshell` 기본 정책이 외부 통신(npm/clawhub)을 차단하여 스킬 설치 실패 (403 Forbidden).
+  1. `nemoclaw onboard` 시 API Key 요구 (더미 키 또는 직접 설정 우회 필요).
 
 ---
 
@@ -23,7 +22,11 @@
 - **Model**: qwen2.5:7b (via Ollama)
 - **Harness Config**: `core_harness/openclaw-sandbox.yaml`
 - **Policy Config**: `core_harness/openshell-policy.yaml`
-- **Next Step In-depth**: 
-  - 방법 A: 사용자가 `nemoclaw onboard`를 수동 실행하여 환경 승인.
-  - 방법 B: `NVIDIA_API_KEY`를 더미로 입력하여 온보딩 통과 시도.
-  - 방법 C: `openshell settings`를 통해 네트워크 정책을 강제 허용으로 수정.
+
+---
+
+### 🚀 다음 세션 시작 지점 (Next Session Entry Point)
+새 세션이 시작되면 에이전트에게 다음 중 하나를 지시하십시오:
+1.  **환경 자동화 구현**: `docs/state/ENVIRONMENT_AUTOMATION_TODO.md`의 계획에 따라 `Makefile` 기반 자동화 도구 구축.
+2.  **스킬 설치 및 검증**: `core_harness/openclaw-sandbox.yaml`에 정의된 `required` 스킬들을 샌드박스에 실제 설치.
+3.  **자비스 시나리오 테스트**: 로컬 LLM을 연동하여 샌드박스 내부에서 자비스의 첫 명령 수행 테스트.
