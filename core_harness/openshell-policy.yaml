@@ -1,3 +1,52 @@
 version: 1
 landlock:
   compatibility: true
+
+network_policies:
+  clawhub_access:
+    name: "ClawHub Registry Access"
+    binaries:
+      - "/usr/bin/node"
+      - "/usr/local/bin/node"
+      - "/usr/bin/npm"
+      - "/usr/local/bin/npm"
+      - "/usr/bin/curl"
+    endpoints:
+      - host: "clawhub.com"
+        port: 443
+        access: "read-write"
+      - host: "*.openclaw.ai"
+        port: 443
+        access: "read-write"
+
+  npm_registry_access:
+    name: "NPM Registry Access"
+    binaries:
+      - "/usr/bin/node"
+      - "/usr/local/bin/node"
+      - "/usr/bin/npm"
+      - "/usr/local/bin/npm"
+    endpoints:
+      - host: "registry.npmjs.org"
+        port: 443
+        access: "read-only"
+      - host: "registry.yarnpkg.com"
+        port: 443
+        access: "read-only"
+
+  llm_api_access:
+    name: "LLM Provider Access"
+    binaries:
+      - "/usr/bin/node"
+      - "/usr/local/bin/node"
+      - "/usr/bin/curl"
+    endpoints:
+      - host: "api.openai.com"
+        port: 443
+        access: "read-write"
+      - host: "api.anthropic.com"
+        port: 443
+        access: "read-write"
+      - host: "*.google.com"
+        port: 443
+        access: "read-write"

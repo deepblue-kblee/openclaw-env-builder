@@ -50,6 +50,10 @@ policies:
         port: 443
       - host: "clawhub.com"
         port: 443
+      - host: "registry.npmjs.org"
+        port: 443
+      - host: "registry.yarnpkg.com"
+        port: 443
       - host: "api.openai.com"
         port: 443
       - host: "api.anthropic.com"
