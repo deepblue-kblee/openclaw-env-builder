@@ -41,6 +41,9 @@ network_policies:
       - "/usr/local/bin/node"
       - "/usr/bin/curl"
     endpoints:
+      - host: "host.docker.internal"
+        port: 11434
+        access: "read-write"
       - host: "api.openai.com"
         port: 443
         access: "read-write"
