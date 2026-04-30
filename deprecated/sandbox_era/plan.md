@@ -10,13 +10,13 @@
 
 ## 2. 단계별 실행 계획
 
-### Phase 1: 샌드박스 환경 설정
-- [ ] `openclaw.json` 설정 파일 작성 및 Docker 백엔드 활성화
-- [ ] 샌드박스용 전용 Docker 이미지 (`openclaw-sandbox:bookworm-slim`) 빌드 또는 확인
-- [ ] 호스트의 API Key 및 설정값 주입 메커니즘 확인 (OpenClaw 기본 기능 활용)
+### Phase 1: 샌드박스 환경 설정 (Done)
+- [x] `openclaw.json` 설정 파일 작성 및 Docker 백엔드 활성화
+- [x] 샌드박스용 전용 Docker 이미지 (`openclaw-sandbox:network-v1`) 빌드 및 검증
+- [x] 호스트의 API Key 및 설정값 주입 메커니즘 확인 (OpenClaw 기본 기능 활용)
 
 ### Phase 2: 업무 지침(Harness) 고도화
-- [ ] `AGENTS.md` 및 `GEMINI.md`에서 NemoClaw 관련 지침 제거
+- [x] `AGENTS.md` 및 `GEMINI.md`에서 NemoClaw 관련 지침 제거
 - [ ] 샌드박스 내부에서의 파일 I/O 및 툴 사용 가이드라인 수립
 - [ ] Zone 2(Sandbox) 실행 시의 자동 라우팅 검증
 

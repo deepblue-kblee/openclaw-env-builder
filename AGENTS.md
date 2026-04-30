@@ -5,26 +5,27 @@
 ---
 
 ### 1. 핵심 철학 (Core Philosophy)
-- 우리는 **'하네스 엔지니어링(Harness Engineering)'**을 준수한다.
-- 실수가 발생하면 프롬프트가 아닌 **구조적 시스템(Harness)**을 고친다.
-- 모든 위험 작업은 OpenClaw 자체 **Docker Sandbox** 내에서 수행한다.
-- 상세 원칙: `docs/methodology/HarnessEngineering.md`
+- 우리는 **'하네스 엔지니어링(Harness Engineering)'**을 이 프로젝트의 **운영 지침과 가이드라인**에만 적용한다.
+- **OpenClaw**는 우리의 관리 대상이며, 에이전트는 독립된 macOS 계정 환경에서 OpenClaw가 최적의 성능을 낼 수 있도록 돕는 **'환경 헬퍼(Env Helper)'** 역할을 한다.
+- **순차 완료 원칙 (Sequential Completion)**: 여러 작업이 주어졌을 때, 동시에 진행하지 않고 반드시 하나를 완벽히 해결(실행-리뷰-검증-평가-완료)한 후 다음 작업으로 넘어간다.
+- **보안과 격리**: 샌드박스 대신 macOS의 사용자 계정 격리 기능을 활용하며, 메인 계정 데이터 보호를 최우선으로 한다.
 
 ### 2. 세션 연속성 및 부팅 시퀀스 (Boot Sequence)
-새로운 세션이 시작되면 반드시 아래 순서대로 문서를 읽고 작업을 재개해야 한다.
-1. **Read AGENTS.md**: 최상위 원칙 및 역할 확인.
-2. **Read docs/state/CURRENT_STATE.md**: 직전 세션의 상태와 **Pending Action** 파악.
+1. **Read AGENTS.md**: 최상위 원칙 및 명명 규칙 확인.
+2. **Read docs/state/CURRENT_STATE.md**: 현재의 환경 관리 상태와 **Next Action** 파악.
 3. **Read docs/roadmap/AGENT_SYSTEM_ROADMAP.md**: 전체 진행도 내 현재 위치 확인.
-4. **Action**: `CURRENT_STATE.md`에 기록된 작업부터 즉시 수행.
+4. **Action**: 환경 지원 작업을 즉시 재개.
 
-### 3. 체크포인트 규칙 (Checkpoint Rule)
-- 의미 있는 단일 작업(스크립트 작성, 환경 검사 등)이 끝날 때마다 반드시 `docs/state/CURRENT_STATE.md`를 최신화한다.
+### 3. 명명 규칙 및 문서 정책 (Conventions & Policy)
+- **커스텀 스킬**: `kb-` 접두사 사용.
+- **슬래시 커맨드**: `/kb:command` 형식, 경로는 `~/.agents/command/kb/`.
+- **최신성 원칙 (Latest-Only)**: 모든 문서는 항상 '최종 상태'만을 담으며, 수정 이력을 기록하지 않는다.
+- **구조적 최적화**: 복잡도 증가 시 능동적으로 문서를 분리/재구성하여 토큰 효율성을 유지한다.
 
-### 4. 필수 참조 문서 (Updated Paths)
-- **로드맵**: `docs/roadmap/AGENT_SYSTEM_ROADMAP.md`
-- **보안 정책**: `docs/policy/SANDBOX_POLICY.md`
-- **방법론**: `docs/methodology/HarnessEngineering.md`
-- **빠른 참조 (FAQ)**: `docs/user-help/QUICK_REF.md`
+### 4. 핵심 환경 정보
+- **Infrastructure**: macOS (Darwin) 독립 전용 계정
+- **Target OS**: macOS (Darwin)
+- **Primary Tool**: OpenClaw (Local LLM & Ecosystem)
 
 ---
-*주의: 모든 실행은 `docs/policy/SANDBOX_POLICY.md`의 보안 구역(Zone) 규칙을 따른다.*
+*주의: 모든 실행은 `docs/policy/LOCAL_ACCOUNT_POLICY.md`의 보안 규칙을 따른다.*

@@ -1,61 +1,47 @@
-# 🚀 에이전트 시스템 구축 마스터 로드맵
+# 🚀 OpenClaw Env Helper 구축 마스터 로드맵
 
-**최종 목표**: 장피엠의 에이전트 전환기 철학을 반영한 고성능 로컬 에이전트 환경 구축 (맥미니 서버 기반)
+**최종 목표**: 독립된 macOS 계정 기반의 안전하고 강력한 OpenClaw 개인용 에이전트 환경 구축 및 관리 지원
 
 ---
 
 ## 📊 현재 진행 상태
-- **현재 단계**: Phase 3. 업무 층 (Gemini CLI) 통합 (진행 중)
-- **최근 업데이트**: 2026-04-13
-- **전략**: 선택적 격리 (Zone 0/1: 호스트, Zone 2: 샌드박스)
+- **현재 단계**: Phase 2. 핵심 문서 재설계 (진행 중)
+- **최근 업데이트**: 2026-04-30
+- **전략**: macOS 계정 격리 기반의 적극적 시스템 활용
 
 ---
 
 ## 🛠️ 태스크 체크리스트
 
-### Phase 1: 기반 아키텍처 설계 및 하네스 구축 (Done)
-- [x] 전체 시스템 폴더 구조 규칙 확정 (`root/`, `agents/`, `skills/` 등)
-- [x] 핵심 하네스 문서 작성 (`AGENTS.md`)
-- [x] 샌드박스 실행 정책 수립 (`docs/policy/SANDBOX_POLICY.md`)
-- [x] 하네스 엔지니어링 방법론 요약본 저장 (`docs/methodology/HarnessEngineering.md`)
+### Phase 1: 환경 전환 및 아카이빙 (Done)
+- [x] 기존 Docker 샌드박스 관련 파일 격리 (`deprecated/sandbox_era`)
+- [x] 샌드박스 정책 문서 아카이빙
 
-### Phase 2: 샌드박스 및 실행 층 구축 (In-Progress)
-- [x] Docker Desktop 4.40+ 및 Node.js v22+, Python 점검 완료
-- [ ] OpenClaw Native Docker Sandbox 활성화 (`openclaw.json`)
-- [ ] 샌드박스용 전용 이미지 빌드 및 최적화
-- [ ] 샌드박스 내 환경 테스트 명령 실행 및 로그 검증
+### Phase 2: 핵심 문서 재설계 (In-Progress)
+- [x] 에이전트 페르소나 변경 (Builder -> Helper)
+- [x] `GEMINI.md`, `AGENTS.md` 전면 개편
+- [ ] 로드맵 및 하네스 방법론 문서 최신화
+- [ ] `docs/state/CURRENT_STATE.md` 갱신
 
-### Phase 3: 업무 층 (Gemini CLI) 통합
-- [x] Gemini CLI 활용 샌드박스 격리 지침(`GEMINI.md`) 수립
-- [ ] OpenClaw 샌드박스 자동 라우팅 검증
-- [ ] 샌드박스 내 로컬 에이전트(Jarvis) 테스트 시나리오 실행
+### Phase 3: 로컬 계정 보안 및 관리 정책 수립
+- [ ] `docs/policy/LOCAL_ACCOUNT_POLICY.md` 작성 (TCC 권한, Sudoers 제어 등)
+- [ ] 독립 계정 내 OpenClaw 실행 안정성 가이드 작성
+- [ ] 메인 계정 데이터 접근 차단 및 공유 폴더 설정 가이드
 
-### Phase 4: 일상/실행 층 (OpenClaw) 확장
-- [ ] 안드로이드 공기계 + ADB/Scrcpy 연결
-- [ ] 카카오톡 아카이빙 시나리오 구현
-- [ ] KTX/열차 조회 자동화 스크립트 작성
+### Phase 4: 사용자 인수인계 및 초기 셋업 지원
+- [ ] 신규 macOS 계정 생성 가이드 작성 (`docs/setup/NEW_ACCOUNT_SETUP_GUIDE.md`)
+- [ ] 독립 계정 환경 내 프로젝트 폴더 이전 및 재설정 지원
+- [ ] 초기 가동 테스트 및 연결 확인
 
-### Phase 5: 통합 인터페이스 및 자동화 루프
-- [ ] 텔레그램 봇 API 연동 및 브릿지 스크립트(`gatekeeper.py`) 작성
-- [ ] 오토 리서치(Auto-Research) 검증 루프 구현
-- [ ] 24시간 가동 서버 안정화 테스트
+### Phase 5: 실무 스킬 고도화 및 시스템 통합
+- [ ] (1) 시스템 제어 및 자동화 스킬 (`kb-system-ops`)
+- [ ] (2) 지정 디렉토리 파일 관리 스킬 (`kb-file-helper`)
+- [ ] (3) 로컬 데이터 활용 및 요약 스킬
+- [ ] (4) 외부 서비스 API 연동 (내부망 내 안전한 통신)
 
 ---
 
 ## 📝 변경 이력 (Change Log)
-- **2026-04-26**: [전략 변경] NemoClaw/OpenShell 사용 중단 결정. OpenClaw Native Docker Sandbox 기반으로 아키텍처 단순화. NemoClaw 관련 파일 및 도구 삭제 완료.
-- **2026-04-13**: [전략 결정] 초기 구축은 통합형(Method A)으로 진행하되, 설정 완성 후 빌더-배포형(Method B)으로 분리하기로 결정. Phase 2.5 로드맵 추가.
-- **2026-04-13**: [Git] 로컬 Git 저장소 초기화 (`openclaw-env-builder`).
-- **2026-04-13**: Claude Code 대신 Gemini CLI를 주 업무 층으로 선택. 샌드박스 내부 OpenClaw 초기화 단계 추가. 자율 주행 프로토콜 도입.
-- **2026-04-13**: Phase 2 샌드박스 구축 완료 (`jarvis-box` 및 로컬 LLM 연결). Phase 3 업무 층 통합 개시.
-- **2026-04-12**: 샌드박스 실행 규칙 수립 및 선택적 격리 전략 채택.
-- **2026-04-12**: 프로젝트 로드맵 문서 생성 및 인프라 점검 완료 (Docker v29.3, Node v24.1, Python 3.9).
-- **2026-04-12**: 문서 구조 재편성 (docs/ 폴더 하위로 이동) 및 세션 연속성 설계 적용.
-
----
-
-## ⚠️ 리스크 관리
-- **리소스**: 샌드박스 다중 구동 시 맥미니 RAM 부족 가능성 → 스왑 영역 확장 검토 필요.
-- **보안**: 샌드박스 우회(Escape) 취약점 모니터링 → 주기적인 NemoClaw 업데이트 필수.
-- **루프 방지**: 에이전트의 반복 실패 시 사용자 개입 프로토콜 엄격 적용.
- 엄격 적용.
+- **2026-04-30**: [전략 대개편] Docker 샌드박스 기반에서 macOS 독립 계정 기반으로 전환. 프로젝트 명칭을 `openclaw-env-helper`로 변경. 불필요한 가상화 오버헤드 제거 및 시스템 활용성 극대화 결정.
+- **2026-04-26**: 샌드박스 네트워크 최적화 및 `kb-ai-doc-manager` 스킬 구축 완료.
+- **2026-04-13**: 프로젝트 초기화 및 샌드박스 기반 아키텍처 수립.
