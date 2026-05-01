@@ -11,8 +11,8 @@
 
 ### 2. 세션 연속성 및 부팅 시퀀스 (Boot Sequence)
 1. **Read AGENTS.md**: 최상위 원칙, 상속 구조, 정보 유실 방지 정책 확인.
-2. **Read docs/state/CURRENT_STATE.md**: 현재의 환경 관리 상태와 **Next Action** 파악.
-3. **Read docs/roadmap/AGENT_SYSTEM_ROADMAP.md**: 전체 진행도 내 현재 위치 확인.
+2. **Read docs/session-state/next-actions.md**: 글로벌 지침에 따른 **다음 할 일(Next Actions)** 파악.
+3. **Read docs/state/CURRENT_STATE.md**: 현재의 환경 관리 상태 및 로컬 컨텍스트 확인.
 4. **Action**: 환경 지원 작업을 즉시 재개.
 
 ### 3. 명명 규칙 및 슬래시 커맨드 실행 (Command Protocol)
