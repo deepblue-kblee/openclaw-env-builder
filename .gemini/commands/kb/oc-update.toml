@@ -1,6 +1,10 @@
-description = "OpenClaw 공식 문서(docs.openclaw.ai)의 최신 정보를 수집하고 정규화합니다."
+description = "OpenClaw 공식 문서의 최신 명세를 수집/분석합니다. (상속 체계 가동)"
 prompt = """
-kb-openclaw-docs 스킬을 사용하여 공식 문서의 최신 정보를 수집하고 분석해줘.
-인자(scope): {{args}} (예: setup, config, skills)
-지침: DOCUMENTATION_STANDARDS.md 규격 준수.
+kb-openclaw-docs 스킬을 호출하여 작업을 수행해줘.
+인자: {{args}}
+
+※ 필수 지침:
+1. kb-openclaw-docs가 상속하는 kb-ai-doc-manager의 그라운드 룰을 로드하고 준수하라.
+2. skills/SKILL_IMPLEMENTATION_PROTOCOL.md의 파일 구조 및 MVD 규격을 엄격히 적용하라.
+3. 모든 과정은 6단계(Pre-Check -> Approval) 프로세스를 따르며, 최종 승인 전에는 파일을 수정하지 마라.
 """
