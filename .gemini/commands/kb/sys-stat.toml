@@ -1,0 +1,6 @@
+description = "현재 jarvis 계정의 시스템 상태(Node.js 버전, 리소스 등)를 진단합니다."
+prompt = """
+kb-system-ops 스킬을 호출하여 시스템 상태를 보고해줘.
+현재 계정: jarvis
+필요 정보: Node.js 버전, CPU/메모리 부하, 디스크 상태.
+"""

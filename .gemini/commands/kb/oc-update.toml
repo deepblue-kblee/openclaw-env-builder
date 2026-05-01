@@ -1,0 +1,6 @@
+description = "OpenClaw 공식 문서(docs.openclaw.ai)의 최신 정보를 수집하고 정규화합니다."
+prompt = """
+kb-openclaw-docs 스킬을 사용하여 공식 문서의 최신 정보를 수집하고 분석해줘.
+인자(scope): {{args}} (예: setup, config, skills)
+지침: DOCUMENTATION_STANDARDS.md 규격 준수.
+"""

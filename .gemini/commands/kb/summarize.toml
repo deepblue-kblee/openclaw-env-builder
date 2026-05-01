@@ -1,0 +1,5 @@
+description = "현재 작업 상태나 문서를 요약합니다."
+prompt = """
+kb-ai-doc-manager 스킬을 사용하여 다음 내용을 요약해줘.
+대상: {{args}}
+"""
