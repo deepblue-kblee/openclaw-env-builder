@@ -13,5 +13,7 @@
 ### 💾 핵심 컨텍스트 (Core Context)
 - **Role**: OpenClaw Env Helper (The Pit Crew)
 - **Architecture**: Inheritance-based (Kernel: `kb-ai-doc-manager`, Spec: `SKILL_IMPLEMENTATION_PROTOCOL.md`)
-- **Note**: 다음 작업(Next Action) 및 세션 상태는 글로벌 지침에 따라 `docs/session-state/next-actions.md`에서 관리함.
+- **Session Management**: 
+  - 본 프로젝트는 글로벌 지침(~/.gemini/GEMINI.md)을 준수합니다.
+  - 세션 단위의 **Next Actions** 및 상세 작업 계획은 `docs/session-state/next-actions.md`를 단일 진실 공급원(SSOT)으로 삼습니다.
 
