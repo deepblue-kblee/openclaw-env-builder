@@ -8,7 +8,7 @@
   - [x] 온보딩: Ollama(v0.22.1) 연동 및 게이트웨이 데몬 등록 완료
   - [x] 정체성 확립: `GEMINI.md`에 환경 관리자 전용 지침 및 분리 원칙 명문화
   - [x] Ollama 모델 복구: `gemma4` 별칭 생성을 통한 404 오류 해결 (`ollama cp gemma4:e2b gemma4`)
-  - [x] 세션 자동화: `/kb:wrap-up`, `/kb:briefing` 커맨드 구현 및 등록 완료
+  - [x] 세션 자동화: `/kb:wrap-up`, `/kb:briefing` 커맨드 구현 및 등록 완료 (스키마 오류 수정됨)
 
 ---
 
