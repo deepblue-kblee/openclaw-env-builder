@@ -5,8 +5,15 @@
 ---
 
 ### 1. 설치 환경 (Installation)
-- **Runtime**: Node.js 24 (권장) 또는 Node.js 22.14 이상
-- **패키지 설치**: `npm install -g openclaw@latest`
+- **Runtime Manager**: `nvm` (권장)
+  - OpenClaw는 특정 Node.js 런타임 버전에 최적화되어 있으므로, `nvm`을 통한 버전 스위칭이 필수적입니다.
+  - 권장 버전: **Node.js 24** (또는 v22.14 이상)
+- **Package Manager**: `pnpm` (강력 권장)
+  - **선택 이유**:
+    - **모노레포 최적화**: OpenClaw의 다중 패키지(Workspaces) 구조를 가장 효율적으로 관리합니다.
+    - **엄격한 의존성 관리**: '유령 의존성' 문제를 방지하여 빌드 안정성을 확보합니다.
+    - **성능**: 콘텐츠 주소 지정 저장소를 통해 디스크 공간을 절약하고 설치 속도를 높입니다.
+  - 설치 명령어: `pnpm add -g openclaw@latest`
 - **데몬 설정 (macOS)**: `openclaw onboard --install-daemon` (launchd 서비스 등록)
 
 ### 2. 파일 시스템 구조 (Filesystem)

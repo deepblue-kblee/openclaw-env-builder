@@ -13,7 +13,7 @@
 - **Management Agent**: Gemini CLI (Environment Helper)
 
 ## 📁 프로젝트 구조
-- `AGENTS.md`: 에이전트 시스템 루트 가이드 (가장 먼저 읽을 것)
+- `GEMINI.md`: 에이전트 시스템 루트 가이드 (가장 먼저 읽을 것)
 - `docs/state/CURRENT_STATE.md`: 현재 작업 상태 및 다음 액션
 - `docs/roadmap/AGENT_SYSTEM_ROADMAP.md`: 전체 프로젝트 구축 로드맵
 - `docs/policy/`: 로컬 계정 보안 및 운영 정책
@@ -22,4 +22,4 @@
 ## 🚀 시작하기
 1. 사용자가 독립된 macOS 계정을 생성합니다.
 2. 해당 계정 공간에 본 저장소를 클론합니다.
-3. `AGENTS.md` 지침에 따라 에이전트가 환경 구축 및 관리를 지원합니다.
+3. `GEMINI.md` 지침에 따라 에이전트가 환경 구축 및 관리를 지원합니다.

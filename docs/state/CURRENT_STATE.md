@@ -1,19 +1,16 @@
 # 📍 현재 작업 상태 (CURRENT_STATE.md)
 
-### 🕒 마지막 업데이트: 2026-05-02 (상속 아키텍처 및 브레이크 프로토콜 정립)
-- **상태**: Phase 5 진입 준비 완료 - 모든 문서 스킬 및 커맨드 인프라 현대화 완료
+### 🕒 마지막 업데이트: 2026-05-02 (OpenClaw 설치 완료 및 경계 규정 확립)
+- **상태**: Phase 5 완료 (설치 및 온보딩 성공) / Phase 6 진입 준비
 - **진행 상황**:
-  - [x] 아키텍처 재설계: `Kernel` - `Domain` - `Spec` 상속 구조 확립
-  - [x] 커스텀 커맨드 등록: `.gemini/commands/kb/` 하위에 TOML 기반 자동완성 커맨드 3종 등록
-  - [x] 안정성 장치: `AGENTS.md`에 Data Integrity Protocol 및 Brake Protocol 명문화
-  - [x] 영속성 확보: 모든 변경 사항 Git 커밋 완료
+  - [x] 시스템 진단: Node.js v24.15.0 확인 및 메모리 임계치 경고
+  - [x] OpenClaw 설치: pnpm을 통한 v2026.4.29 설치 성공
+  - [x] 온보딩: Ollama(v0.22.1) 연동 및 게이트웨이 데몬 등록 완료
+  - [x] 정체성 확립: `GEMINI.md`에 환경 관리자 전용 지침 및 분리 원칙 명문화
 
 ---
 
 ### 💾 핵심 컨텍스트 (Core Context)
 - **Role**: OpenClaw Env Helper (The Pit Crew)
-- **Architecture**: Inheritance-based (Kernel: `kb-ai-doc-manager`, Spec: `SKILL_IMPLEMENTATION_PROTOCOL.md`)
-- **Session Management**: 
-  - 본 프로젝트는 글로벌 지침(~/.gemini/GEMINI.md)을 준수합니다.
-  - 세션 단위의 **Next Actions** 및 상세 작업 계획은 `docs/session-state/next-actions.md`를 단일 진실 공급원(SSOT)으로 삼습니다.
+- **Boundary**: 이 리포지토리의 관제 지침은 OpenClaw 워크스페이스와 격리됨.
 

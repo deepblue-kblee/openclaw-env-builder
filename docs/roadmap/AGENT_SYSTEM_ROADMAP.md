@@ -19,7 +19,7 @@
 
 ### Phase 2: 핵심 문서 재설계 (Done)
 - [x] 에이전트 페르소나 변경 (Builder -> Helper)
-- [x] `GEMINI.md`, `AGENTS.md` 전면 개편
+- [x] `GEMINI.md`, `GEMINI.md` 전면 개편
 - [x] 로드맵 및 하네스 방법론 문서 최신화
 - [x] `docs/state/CURRENT_STATE.md` 갱신
 

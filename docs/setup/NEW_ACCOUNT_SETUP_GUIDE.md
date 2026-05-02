@@ -27,7 +27,7 @@ OpenClaw를 안전하게 구동하기 위해 별도의 macOS 계정을 생성하
 
 ### 4. 프로젝트 저장소 이전
 1. 메인 계정의 `openclaw-env-builder` (이제 `openclaw-env-helper`) 폴더를 `/Users/Shared/OpenClaw/` 등으로 복사하거나, 신규 계정에서 직접 git clone한다.
-2. 신규 계정에서 해당 폴더로 이동하여 `AGENTS.md`를 읽고 작업을 시작한다.
+2. 신규 계정에서 해당 폴더로 이동하여 `GEMINI.md`를 읽고 작업을 시작한다.
 
 ### 5. SSH 접속 설정 (선택 사항)
 - 메인 계정에서 신규 계정으로 편리하게 명령을 내리려면 원격 로그인을 활성화하고 SSH 키를 등록한다.

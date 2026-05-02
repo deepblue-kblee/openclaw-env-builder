@@ -16,7 +16,7 @@
 - [x] 호스트의 API Key 및 설정값 주입 메커니즘 확인 (OpenClaw 기본 기능 활용)
 
 ### Phase 2: 업무 지침(Harness) 고도화
-- [x] `AGENTS.md` 및 `GEMINI.md`에서 NemoClaw 관련 지침 제거
+- [x] `GEMINI.md` 및 `GEMINI.md`에서 NemoClaw 관련 지침 제거
 - [ ] 샌드박스 내부에서의 파일 I/O 및 툴 사용 가이드라인 수립
 - [ ] Zone 2(Sandbox) 실행 시의 자동 라우팅 검증
 
